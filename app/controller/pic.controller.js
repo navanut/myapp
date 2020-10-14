@@ -1,0 +1,1 @@
+const Picture = '../model/pic.model.js'
