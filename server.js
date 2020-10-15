@@ -22,7 +22,8 @@ app.use(bodyParser.json());
 // parse requests of content-type: application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api', api)
+// route that index
+app.use('/api', api) //http://localhost:3000/api
 
 // simple route
 app.get("/", (req, res) => {

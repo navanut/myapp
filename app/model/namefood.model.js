@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) =>{
             type: Sequelize.STRING(10),
             allowNull: false
         },
-        picture: {
+        detail: {
             type: Sequelize.STRING(500),
             allowNull: false
         },

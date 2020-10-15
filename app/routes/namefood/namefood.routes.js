@@ -4,13 +4,14 @@ const data = require("../../model/db");
 const food = data.food;
 
 //Create name food
+//http://localhost:3000/api/food/newfood
 app.post("/newfood", (req, res) => {
   food
     .create({
       nid: req.body.nid,
       namefood: req.body.namefood,
       price: req.body.price,
-      picture: req.body.picture,
+      detail: req.body.detail,
     })
     .then((data) => {
       res.status(200).send(data);
@@ -20,6 +21,7 @@ app.post("/newfood", (req, res) => {
     });
 });
 //Retrieve food
+//http://localhost:3000/api/food
 app.get("/", (req, res) => {
   food
     .findAll()
@@ -28,11 +30,11 @@ app.get("/", (req, res) => {
     })
     .catch((err) => {
       res.status(500).send(err);
+      console.log(err);
     });
-
-    console.log("success");
 });
 //update food
+//http://localhost:3000/api/foodupdatefood/number of nid
 app.put("/updatefood/:nid", (req, res) => {
   food
     .findOne({
@@ -43,7 +45,7 @@ app.put("/updatefood/:nid", (req, res) => {
         .update({
           namefood: req.body.namefood,
           price: req.body.price,
-          picture: req.body.picture,
+          detail: req.body.detail,
         })
         .then((data) => {
           res.status(200).send(data);
@@ -59,6 +61,7 @@ app.put("/updatefood/:nid", (req, res) => {
     });
 });
 //delete food
+//http://localhost:3000/api/deletefood/number of nid
 app.delete("/deletefood/:nid", (req, res) => {
   food
     .destroy({
