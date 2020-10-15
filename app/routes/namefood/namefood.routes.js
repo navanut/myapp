@@ -3,7 +3,7 @@ const app = express.Router();
 const data = require("../../model/db");
 const food = data.food;
 
-//Create name food
+//Create new food
 //http://localhost:3000/api/food/newfood
 app.post("/newfood", (req, res) => {
   food

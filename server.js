@@ -13,7 +13,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 data.sequelize.sync({force: false}).then(()=>{
-  console.log('Drop and re-sync db')
+  console.log('re-sync db')
 })
 
 // parse requests of content-type: application/json
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 // parse requests of content-type: application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// route that index
+// route to index
 app.use('/api', api) //http://localhost:3000/api
 
 // simple route

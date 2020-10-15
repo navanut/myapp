@@ -1,5 +1,3 @@
-/* const { Sequelize } = require("sequelize/types"); */
-
 module.exports = (sequelize, Sequelize) =>{
     const Name = sequelize.define('name',{
         nid:{
